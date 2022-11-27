@@ -103,4 +103,41 @@ for (let i = 0; i < finances.length; i++) {
 
 var totalSum = `Total: $${totalSumNum}`;
 
+// Create another array which shows the month on month changes
+
+var changeArray = [];
+var changeSum = 0;
+var greatestIncrease = null;
+var greatestDecrease = null;
+var greatestIncreaseMonth;
+var greatestDecreaseMonth;
+
+for (let i = 1; i < finances.length; i++) {
+
+    let currentMonth = finances[i][1];
+    let previousMonth = finances[i-1][1];
+    let change = currentMonth - previousMonth;
+    
+    changeArray.push([finances[i][0],change]);
+    changeSum += change;
+
+// find greatest monthly increase
+
+        if (change > greatestIncrease) {
+            greatestIncrease = change;
+            greatestIncreaseMonth = `Greatest Increase in Profits: ${finances[i][0]} ($${change})`;
+        }
+// find greatest monthly decrease
+
+        if (change < greatestDecrease) {
+            greatestDecrease = change;
+            greatestDecreaseMonth = `Greatest Decrease in Profits: ${finances[i][0]} ($${change})`;
+        }
+
+}
+
+
+console.log(totalMonths);
 console.log(totalSum);
+console.log(greatestIncreaseMonth);
+console.log(greatestDecreaseMonth);
