@@ -87,3 +87,20 @@ var finances = [
     ['Feb-2017', 671099]
     ];
     
+// Find Total Months
+
+var totalMonthsNum = finances.length;
+var totalMonths = `Total Months: ${totalMonthsNum}`;
+
+// Sum total Profits/Losses over Array
+
+var totalSumNum = 0;
+
+for (let i = 0; i < finances.length; i++) {
+
+    totalSumNum += finances[i][1];
+}
+
+var totalSum = `Total: $${totalSumNum}`;
+
+console.log(totalSum);
