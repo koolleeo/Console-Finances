@@ -137,7 +137,23 @@ for (let i = 1; i < finances.length; i++) {
 }
 
 
-console.log(totalMonths);
-console.log(totalSum);
-console.log(greatestIncreaseMonth);
-console.log(greatestDecreaseMonth);
+//find average month by month change
+var avgChangeNum = changeSum/changeArray.length;
+var avgChange = `Average change $${avgChangeNum.toFixed(2)}`;
+
+var output = 
+`Financial Analysis
+----------------------------
+${totalMonths}
+${totalSum}
+${avgChange}
+${greatestIncreaseMonth}
+${greatestDecreaseMonth}
+`;
+
+console.log(output);
+
+
+//out of scope for assignment, but display output within browser
+document.getElementById("console").innerText = output;
+//
